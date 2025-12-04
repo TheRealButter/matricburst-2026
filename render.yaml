@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: matricburst-2026
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: AP_ENVIRONMENT
+        value: production
+      - key: AP_FRONTEND_URL
+        generateValue: true
+      - key: AP_SERVER_URL
+        generateValue: true
+      - key: AP_ENCRYPTION_KEY
+        generateValue: true
+      - key: AP_JWT_SECRET
+        generateValue: true
+      - key: AP_EXECUTION_MODE
+        value: UNSANDBOXED
+      - key: AP_QUEUE_MODE
+        value: MEMORY
+      - key: DATABASE_URL
+        value: sqlite:///app/data/activepieces.db
