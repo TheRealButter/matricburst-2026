@@ -17,9 +17,10 @@ services:
         generateValue: true
       - key: AP_JWT_SECRET
         generateValue: true
-      - key: AP_EXECUTION_MODE
-        value: UNSANDBOXED
-      - key: AP_QUEUE_MODE
-        value: MEMORY
       - key: DATABASE_URL
         value: sqlite:///app/data/activepieces.db
+      # ←←← YOUR WHATSAPP CREDENTIALS GO HERE (secret & safe)
+      - key: WHATSAPP_TOKEN
+        sync: false   # ← you will paste your real token here in the next step
+      - key: WHATSAPP_PHONE_ID
+        sync: false   # ← you will paste your real phone ID here
