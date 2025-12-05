@@ -19,8 +19,11 @@ services:
         generateValue: true
       - key: DATABASE_URL
         value: sqlite:///app/data/activepieces.db
-      # ←←← YOUR WHATSAPP CREDENTIALS GO HERE (secret & safe)
+      - key: NODE_ENV
+        value: production
       - key: WHATSAPP_TOKEN
-        sync: false   # ← you will paste your real token here in the next step
+        sync: false  # Your token is already set in Render env
       - key: WHATSAPP_PHONE_ID
-        sync: false   # ← you will paste your real phone ID here
+        sync: false  # Your phone ID is already set
+      - key: AP_ENABLE_SIGNUP
+        value: true  # Forces first-time setup screen
